@@ -1,0 +1,257 @@
+<div class="container-fluid vendor-head">
+  <div class="row">
+    <div class="col-md-10 mx-auto text-center text-white pt-5">
+      <h3 style="font-size: 30px;font-weight: bold">Listing</h3>
+      <span>Home>Listing</span>
+    </div>
+  </div>
+</div>
+<div class="container-fluid text-center py-5" (window:resize)="onResize($event)">
+  <h4 class="text-center">Select one of the best listings</h4>
+  <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</span>
+  <div class="row pt-5">
+    <div class="col-md-10 mx-auto row">
+      <div class="col-md-3 text-left">
+        <div class="card card-body">
+          <form>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Keyword" name="searchTerm" [(ngModel)]="term">
+              </div>
+          </form>
+          <div class="category-filter">
+            <button class="btn bg-white text-dark btn-filter" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+              aria-controls="collapseExample" (click)="collapseIconRotate($event)">
+              All Categories  <span class="float-right collapse-ico"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="collapse show" id="collapseExample">
+              <ul class="list-group">
+                <div class="categoryDiv" *ngFor="let cat of category | sortByCategoryName">
+                    <button class="category-li" (click)="filters(cat.category, $event)">
+                      <span style="font-size: 7px; color:#444"><i class="fas fa-circle"></i></span> &nbsp;&nbsp; {{cat.category}}
+                    </button>
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div class="category-filter">
+              <button class="btn bg-white text-dark btn-filter" type="button" data-toggle="collapse" data-target="#showFilters" aria-expanded="false"
+                aria-controls="conditionFilter" (click)="collapseIconRotate($event)">
+                Filters <span class="float-right collapse-ico"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              <div class="collapse show" id="showFilters">
+                <ul class="list-group">
+                  <li class="list-group-i">
+                    <div class="pretty p-default p-thick p-pulse">
+                      <input type="checkbox" value="true" [(ngModel)]="sortByDistanceCondition" />
+                      <div class="state p-warning-o">
+                        <label>Sort By Distance</label>
+                      </div>
+                    </div>
+  
+                  </li>
+                  <li class="list-group-i">
+                    <div class="pretty p-default p-thick p-pulse">
+                      <input type="checkbox" value="true" [(ngModel)]="findInRangeCondition" />
+                      <div class="state p-warning-o">
+                        <label>Search Near By</label>
+                      </div>
+                    </div>
+                    <!--
+                    <div *ngIf="findInRangeCondition">
+                      <div class="form-group">
+                        <label for="distanceRange">Select Range</label>
+                        <select class="form-control" id="distanceRange" [(ngModel)]="distanceRange">
+                            <option value = 10>10 Km</option>
+                            <option value = 20>20 Km</option>
+                            <option value = 50>50 Km</option>
+                            <option value = 100>100 Km</option>
+                            <option value = 500>500 Km</option>
+                            <option value = 1000>1000 Km</option>
+                        </select>
+                      </div>
+                    </div>
+                    -->
+                    <div *ngIf="findInRangeCondition">
+                        <div data-role="main" class="ui-content">
+                          <form>
+                            <div data-role="rangeslider" class="rangeSlider">
+                              <input type="range" min="0.1" max="5000" class="slider" id="myRangeMin" [(ngModel)]="minDistanceRange" name="minRange" style="width: 100%!important;">
+                              
+                            </div>
+                          </form>
+                          <div class="float-left rangeInputDiv">
+                            <i class="fas fa-road"></i>&nbsp;&nbsp; KM
+                            <input type="text" [(ngModel)]="minDistanceRange" name="minRangeInput" class="rangeInput"> 
+                          </div>
+                          
+                          
+                         
+                        </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          <div class="category-filter">
+            <!-- <button class="btn bg-white text-dark btn-filter" type="button" data-toggle="collapse" data-target="#postedFilter" aria-expanded="false"
+              aria-controls="postedFilter" (click)="collapseIconRotate($event)">
+              Posted By <span class="float-right collapse-ico"><i class="fas fa-chevron-down"></i></span>
+            </button> -->
+            <!-- <div class="collapse show" id="postedFilter">
+              <ul class="list-group">
+                <li class="list-group-i">
+                  <div class="pretty p-default p-thick p-pulse">
+                    <input type="checkbox" />
+                    <div class="state p-warning-o">
+                      <label>INDIVIDUAL</label>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-i">
+                  <div class="pretty p-default p-thick p-pulse">
+                    <input type="checkbox" />
+                    <div class="state p-warning-o">
+                      <label>DEALER</label>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-i">
+                  <div class="pretty p-default p-thick p-pulse">
+                    <input type="checkbox" />
+                    <div class="state p-warning-o">
+                      <label>RESELLER</label>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-group-i">
+                  <div class="pretty p-default p-thick p-pulse">
+                    <input type="checkbox" />
+                    <div class="state p-warning-o">
+                      <label>MANUFACTURER</label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div> -->
+          </div>
+          <!--
+          <div class="category-filter">
+            <button class="btn bg-white text-dark btn-filter" type="button" data-toggle="collapse" data-target="#rangeFilter" aria-expanded="false"
+              aria-controls="rangeFilter" (click)="collapseIconRotate($event)">
+              Price Range <span class="float-right collapse-ico"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="collapse show" id="rangeFilter">
+              <div data-role="main" class="ui-content">
+                <form method="post" action="/action_page_post.php">
+                  <div data-role="rangeslider" class="rangeSlider">
+                    <input type="range" min="1" max="5000" class="slider" id="myRangeMin" [(ngModel)]="minRange" name="minRange">
+                    <input type="range" min="5000" max="10000" class="slider" id="myRangeMax" [(ngModel)]="maxRange" name="maxRange">
+                  </div>
+                </form>
+                <div class="float-left rangeInputDiv">
+                  <i class="fas fa-rupee-sign"></i>&nbsp;&nbsp;
+                  <input type="text" [(ngModel)]="minRange" name="minRangeInput" class="rangeInput">
+                </div>
+                <div class="float-right rangeInputDiv">
+                  <i class="fas fa-rupee-sign"></i>&nbsp;&nbsp;
+                  <input type="text" [(ngModel)]="maxRange" name="maxRangeInput" class="rangeInput">
+                </div>
+               
+              </div>
+            </div>
+          </div> 
+        -->
+        </div>
+      </div>
+      <div class="col-md-9 ">
+        <div class="row mb-3">
+            <div class="header-vendors col-md-12">
+                <div class="float-left">
+                    <span>Showing Products</span>
+                </div>
+                
+
+                
+                <div class="float-right">
+                  View 
+                  <span class="mx-3 view-change active" (click)="changeView(true)" #gridView>
+                    <i class="fas fa-th"></i>
+                  </span>
+                  <span class=" mr-3 view-change" (click)="changeView(false)" #listView>
+                    <i class="fas fa-th-list"></i>
+                  </span>
+                  
+                </div>
+              </div>
+        </div>
+        <div class="d-flex justify-content-center pos load " *ngIf="loading">
+          </div>
+        <div class="row vendor-card-grid" *ngIf="vendordata" #vendorList>
+              <div class="vendor-cards"*ngFor="let ven of vendordata | category : selectedCategory | search: term | distance : minDistanceRange :findInRangeCondition | sortByDistance : sortByDistanceCondition" >
+                  <div class="card mb-4">
+                    <div class="card-img-div">
+                      <!-- <div class="card-top">
+                        <span class="badge badge-warning text-white badge-round badge-notification">New</span>
+                      </div> -->
+      
+                      <img *ngIf="ven.path!=null" class="card-img-top mb-0" src="https://cpanel.localcalls.in/public/admin/uploads/{{ven.path}}" alt="Card image cap" style="height: 155px">
+                      <img *ngIf="ven.path==null || ven.path==''" class="card-img-top mb-0" src="assets/img/dummy.jpg" alt="Card image cap" style="height: 155px">
+                    </div>
+                    <div class="card-body text-left">
+                      <div class="mb-3" style="height: 17px;">
+                        <span class="card-title"><strong>{{ven.shop_name.substring(0,25)}} </strong></span>
+                        <span class="float-right text-success">
+                          <i class="far fa-bookmark"></i>
+                        </span>
+                      </div>
+                      <div style="height: 15px;">
+                        <span>{{ven.vendor_name}}</span>
+                      </div>
+                      <div class="text-warning mb-3" style="height: 25px !important;">
+                        <rating
+                        [(ngModel)]="ven.rating"
+                        [readonly]="true"
+                        ></rating>
+                      </div>
+                      <div style="min-height: 25px;">
+                        <span class="text-success">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </span>&nbsp;
+                        <span style="text-transform: uppercase">{{ven.office_address.substring(0,40)}}</span>
+                      </div>
+                      <div class="mt-3 btn-list">
+                        <button (click)="getDetails(ven)" class="save-btn btn btn-outline-secondary" style="width: 100%;">
+                          <i class="fas fa-info-circle"></i>&nbsp; Details</button>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+           
+        </div>
+        <div *ngIf="(vendordata | category : selectedCategory).length == 0 && hide">
+          No Vendors are available in this category
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid color text-center">
+    <div class="row">
+  
+      <div class="col-12 col-md-12 col-lg-12">
+  
+        <p class="text-white heading-app ">Download on App Store</p>
+        <p class="text-white mb-2">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
+          by
+          <br>injected humour, or randomised words which don't look even slightly believable </p>
+      </div>
+  
+    </div>
+    <div class="row parent app-div text-center">
+      <div class="col-md-12">
+          <button class="btn"><img src="assets/img/icon/icon7.png" alt="" style="width:35px"> &nbsp;&nbsp; ANDROID</button>
+          <button class="btn"><img src="assets/img/icon/ios.png" alt="" style="width:35px">&nbsp;&nbsp; IOS</button>
+          <button class="btn"><img src="assets/img/icon/windows.png" alt="" style="width:35px"> &nbsp;&nbsp; WINDOWS</button>
+      </div>
+    </div>
+  </div>

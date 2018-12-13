@@ -1,0 +1,464 @@
+.catbox {
+  border: black solid 1px;
+}
+.parent{
+  display: flex;
+  flex-wrap: wrap;
+  
+
+}
+.services{
+  height: 43vh;
+   width: 25rem;
+   position: relative;
+    border: none; 
+    overflow: hidden;
+}
+
+.child{
+  width: 95%;
+}
+.child:nth-child(2){
+align-self: stretch;
+height: auto;
+}
+
+.card-title {
+  color: white;
+}
+.no-gutter > [class*='col-'] {
+  padding-right: 4px;
+  padding-left:4px;
+  padding-top: 0;
+  padding-bottom: 0;
+
+
+}
+.size{
+  height: 40vh;
+}
+
+.card-body{
+  z-index: 1;
+  padding:0px;
+  width: 100%;
+  height: 100%;    
+  display:  grid;
+  align-items:  center;
+  justify-items: center;
+
+}
+.margin-left{
+  margin-left: 11.5vw;
+  
+
+}
+
+
+.big {
+  padding-top: 170px;
+}
+
+.wrap:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.back{
+  min-height: 400px;
+  background:url('../../../assets/img/icon/category/cover-image.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  box-shadow:inset 0 0 0 2000px rgba(6, 7, 7, 0.349)
+}
+.rest{
+  height: 43vh;
+   width: 25rem
+}
+.remove{
+  border:none;
+  outline: none;
+}
+.canter-div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+img {
+  background-size: cover;
+}
+
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.on {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 1vh;
+}
+
+.correct {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 43vh;
+  width: 45vw;
+
+  mix-blend-mode: overlay;
+}
+
+.color {
+  background: linear-gradient(to right, #45b9f1, #7272d4);
+  height: 300px;
+}
+
+.para-color {
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 8vh;
+  font-size: 1.6rem;
+}
+
+.paraOne-color {
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+  padding-top: 2vh;
+}
+.health{
+ 
+  position: relative;
+   outline: none; 
+    border: none;
+     height: 43vh;
+     width:49.6rem;
+}
+.height-two{
+  height: 70vh;
+  width:36.8rem;
+}
+.category-div {
+  margin-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.app-div button {
+  color: #fff;
+  padding: 0 40px !important;
+  border-radius: 25px;
+  border: 1px solid #fff;
+}
+
+.overlay-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+}
+
+.app-div button:hover {
+  color: #555;
+  background: #fff;
+  border: 1px solid #fff;
+}
+
+.app-div button:hover img {
+  mix-blend-mode: difference;
+  opacity: 0.7;
+}
+
+.app-div button i {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  color: #fff;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  margin-top: 8vh;
+}
+.serve{
+  height: 43vh;
+  transition: 0.6s;
+}
+.rest{
+  height: 43vh;
+  transition: 0.6s;
+}
+.height{
+  height: 43vh;
+  transition: 0.6s;
+}
+.name{
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+a:hover {
+  color: white;
+}
+
+.zoom {
+  transition: transform .6s;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.zoom:hover {
+  transform: scale(1.06);
+}
+.zoom:hover .serve{
+  transform: scale(1.06);
+}
+.zoom:hover .rest{
+  transform: scale(1.06);
+}
+.zoom:hover .height{
+  transform: scale(1.06);
+}
+
+.tile-image{
+    transition: 0.6s;
+}
+.size {
+  position: relative;
+  border: none;
+}
+
+.position {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.visible {
+  z-index: 2;
+}
+
+.logo {
+  margin-bottom: 10px!important;
+  width: 70px;
+}
+.top{
+  margin-top: 5vh;
+ 
+  width: 50px;
+}
+.top-three{
+  margin-top: 12vh;
+}
+.top-one{
+  
+ 
+  width: 50px;
+}
+.top-two{
+  margin-top: 20vh;
+}
+.outline-none {
+  outline: none;
+}
+
+.load {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid orange;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.pos {
+  margin-left: 45vw;
+  margin-top: 5vh;
+}
+
+.margin {
+  margin-left: 7.6vw;
+}
+
+.pos {
+  position: relative;
+}
+
+.new {
+  position: relative;
+}
+
+.tile-image {
+  width: 100%;
+  ;
+  height: auto;
+}
+
+
+
+.mar {
+  margin-top: 4vh;
+}
+
+.style {
+  cursor: pointer;
+}
+
+.center-div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+.daily{
+  height: 43vh;
+   width: 25rem;
+}
+@media screen and (max-width:480px){
+  .mar{
+    height: 55vh;
+
+}
+.rest{
+  height: 43vh;
+   width: 25rem
+}
+
+.margin-left{
+  margin-left:4.5vw;
+  margin-right:4vw;
+
+  
+
+}
+.small{
+  height: 50vh;
+   width: 25rem;
+}
+.height{
+  height: 48vh;
+ 
+}
+.height-two{
+  height: 60vh;
+  width:25rem;
+}
+.top{
+  margin-top: 0vh;
+ 
+  width: 50px;
+}
+.top-two{
+  margin-top: 13vh;
+}
+.back{
+  
+  
+  background:url('../../../assets/img/icon/category/cover-image.jpg');
+  background-position: center;
+  align-items: center;
+  justify-items: center;
+  background-color: rgba(0,0,0,0.4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  box-shadow:inset 0 0 0 2000px rgba(6, 7, 7, 0.349)
+}
+  
+
+}
+@media screen and (min-width: 480px) and (max-width: 767px){
+  .new-margin{
+    margin-left:5vw;
+    
+  
+  }
+  
+  
+  .small{
+    height: 50vh;
+     width: 25rem;
+  }
+  .height{
+    height: 48vh;
+   
+  }
+
+  .margin-left{
+    margin-left:2vw;
+
+  }
+  .daily{
+    height: 43vh;
+     width: 45rem;
+  }
+  .now{
+    height:60vh;
+     width:44.5rem;
+  }
+  .serve{
+    height:60vh;
+    transition: 0.6s;
+  }
+  .rest{
+    height: 43vh;
+     width: 28rem
+  }
+  .height-two{
+    height: 60vh;
+    width:44.3rem;
+  }
+  .auto{
+    height: 60vh;
+    width:44.3rem;
+  }
+}

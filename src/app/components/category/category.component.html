@@ -1,0 +1,111 @@
+<div class="container-fluid name">
+
+  <div class="container-fluid ">
+    <div 
+      class="header side back"> 
+      <h2 style="color:white;padding-top: 170px;" class="text-center">
+        <strong>Category</strong>
+      </h2>
+      <h6 style="color: white" class="text-center">Home>>Category</h6>
+    </div>
+  </div>
+  <div class="container-fluid">
+
+    <div class="row pt-5 pb-5">
+      <h4 class="mx-auto">
+        <strong>Select one of the best Category</strong>
+      </h4>
+    </div>
+    <div class="d-flex justify-content-center pos load " *ngIf="loading">
+
+
+
+    </div>
+
+    <!-- <div fxLayout="row"  fxLayoutWrap  > 
+    
+    
+    <mat-grid-list col-xs="2" cols="4" rowHeight="100px" gutterSize="15px"    >
+    
+      <mat-grid-tile  
+          *ngFor="let cat of categor"
+          [colspan]="cat.cols"
+          [rowspan]="cat.rows"
+          [routerLink]="['/subcategories',cat.id]"
+          class="style"
+          >
+          <div class="zoom">
+            <img class="img-fluid tile-image  " src="assets/img/icon/category/{{cat.category}}.png" alt="" >
+            <div class="center-div ">
+              <div class="text-center">
+                  <img class="logo" src="assets/img/icon/category-icons/{{cat.category}}.png" alt="">
+          
+                  <h5 class=" text-center text-white hi">
+                    {{cat.category}}
+                  </h5>
+              </div>
+            </div>
+          </div>
+          
+      </mat-grid-tile>
+    </mat-grid-list>
+    </div>
+    </div>
+    
+
+  </div> -->
+  </div>
+  
+  <div class="container d-flex justify-content-center">
+  <div class="row child no-gutter new-margin " >
+
+      <div class="col-md-4 col-sm-6 col-12  remove " style="font-size: 0.4px; cursor:pointer;" *ngFor="let cat of category | orders:'category'"  [routerLink]="['/subcategories',cat.id]">
+        <div class="zoom">         
+          <img  *ngIf="cat.background!=''" class="img-fluid correct  " defaultImage="assets/img/default.jpg" lazyLoad="https://cpanel.localcalls.in/public/icon/{{cat.background}}" [offset]="offset">
+          <img *ngIf="cat.background==''" class="img-fluid correct  " src="assets/img/icon/category/Travel & Ticketing.png" alt="">
+          <div class="center-div ">
+            <div class="text-center ">
+               <img *ngIf="cat.image!=''" class="logo" src="https://cpanel.localcalls.in/public/icon/{{cat.wh_image}}" alt="">
+              <img *ngIf="cat.image==''" class="logo" src="assets/img/icon/category-icons/Travel & Ticketing.png" alt=""> 
+              <!--<img class="logo" data-src="assets/img/icon/Categories icon/{{cat.category}}.png" alt="">-->
+
+              <h5 class=" text-center text-white hi">
+                {{cat.category}}
+              </h5>
+
+            </div>
+          </div>
+        </div>
+ 
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+
+  <div class="container-fluid color mar">
+    <div class="row">
+
+      <div class="col-12 col-md-12 col-lg-12">
+
+        <p class="para-color ">Download
+          <span class="on">on</span> App Store</p>
+        <p class="paraOne-color">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some
+          form, by
+          <br>injected humour, or randomised words which don't look even slightly believable </p>
+
+
+      </div>
+
+    </div>
+    <div class="row parent app-div">
+      <button class="btn ">
+        <img src="assets/img/icon/icon7.png" alt="" style="width:35px"> &nbsp;&nbsp; ANDROID</button>
+      <button class="btn ">
+        <img src="assets/img/icon/ios.png" alt="" style="width:35px">&nbsp;&nbsp; IOS</button>
+      <button class="btn ">
+        <img src="assets/img/icon/windows.png" alt="" style="width:35px"> &nbsp;&nbsp; WINDOWS</button>
+    </div>
+  </div>
+  <app-business-expanding></app-business-expanding>

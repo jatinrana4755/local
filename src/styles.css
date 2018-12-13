@@ -1,0 +1,99 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-round {
+  padding: 0 30px !important;
+  border-radius: 25px;
+}
+
+.badge-round {
+  padding: 5px 10px;
+  border-radius: 25px;
+}
+
+.badge-outline {
+  border: 2px solid #fff;
+  color: #fff
+}
+
+.carousel {
+  margin-top: 195px;
+}
+
+.carousel-indicators {
+  top: -120px;
+  bottom: auto;
+  display: inline-grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 14%;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.carousel-indicators li {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50% !important;
+  background-color: #000 !important;
+  transition: 0.3s;
+}
+
+.carousel-indicators li.active {
+  border: 2px solid green;
+  width: 60px !important;
+  height: 60px !important;
+}
+
+.inline-carousel .carousel-indicators li {
+    display: none;
+  }
+  .inline-carousel .carousel {
+    margin-top: 0;
+  }  
+  .inline-carousel .carousel .carousel-inner{
+      width: 100px;
+  }
+  .has-gradient{
+    background: linear-gradient(45deg,#17a2b8,#2bd8c0);
+  }
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 13px!important;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    font-size: 13px!important;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    font-size: 13px!important;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    font-size: 13px!important;
+  }
+  .slick-prev:before, .slick-next:before{
+    color:#000!important;
+  }
+  .homeCarousel .slick-dots{
+    bottom: 0;
+  }
+  iframe{
+    min-height: 20px;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color:#fff;
+  }
+
+
+  

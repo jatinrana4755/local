@@ -1,0 +1,68 @@
+<div class="container-fluid ">
+    <div class="row">
+        <div   class="col-md-12 mx-auto text-center text-white pt-5 second "  >
+                <img class="size correct " src="https://cpanel.localcalls.in/public/icon/{{a}}">
+                <h3 style="font-size: 30px;font-weight: bold; margin-top:20vh;">{{p}}</h3>
+            <span></span>
+        </div>
+    </div>
+</div>
+<div class="container margin-top">
+    <div class="d-flex justify-content-center pos load " *ngIf="loading"></div>
+    <div class="row text-center" *ngIf="errorCase">
+        <div class="text-center notAvail">
+            <div>
+                <span class="mb-4" style="display: block"><i class="far fa-hourglass" style="color: #2bcee2;font-size:45px"></i></span>
+                <p>More subcategories will be available soon.</p>
+            </div>
+            
+        </div>
+    </div>
+    <div class="row " *ngIf="newSub">
+        
+        <div class="col-md-3 col-sm-6 col-12 pb-3 " *ngFor="let sub of newSub  | orders:'category'" >
+            <div style="position: relative; overflow: hidden;" class="card zoom"  [routerLink]="['/',url,hyphenateUrlParams(sub.category),sub.id]">
+                <img class="correct" *ngIf="sub.image!=null" defaultImage="assets/img/default.jpg" lazyLoad="https://cpanel.localcalls.in/public/icon/{{sub.image}}" [offset]="offset" >
+                <img class="correct" *ngIf="sub.image=='0'" src="assets/img/new-car.jpg"/>
+                <div class="card-body" style="background: rgba(0,0,0,0.4);">
+                    <h5 style="padding-top:5px;color:white" class="card-title text-center">
+                        <strong class="font-color">{{sub.category}}</strong>
+                    </h5>
+                </div>
+            </div>
+        </div>
+     </div>
+    <br>
+    <div class="row parent app-div" *ngIf="newSub">
+            <button class="btn btn-success btn-round " type="button" (click)="getMore()" #loadMoreBtn>Load more</button>
+    
+        </div>
+    
+</div>
+<br>
+<br>
+
+
+<div class="container-fluid color mar">
+    <div class="row">
+
+        <div class="col-12 col-md-12 col-lg-12">
+
+            <p class="para-color ">Download
+                <span class="on">on</span> App Store</p>
+            <p class="paraOne-color">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+                some form, by
+                <br>injected humour, or randomised words which don't look even slightly believable </p>
+        </div>
+    </div>
+    <div class="row parent app-div">
+        <button class="btn ">
+            <img src="assets/img/icon/icon7.png" alt="" style="width:35px"> &nbsp;&nbsp; ANDROID</button>
+        <button class="btn ">
+            <img src="assets/img/icon/ios.png" alt="" style="width:35px">&nbsp;&nbsp; IOS</button>
+        <button class="btn ">
+            <img src="assets/img/icon/windows.png" alt="" style="width:35px"> &nbsp;&nbsp; WINDOWS</button>
+    </div>
+
+</div>
+<app-business-expanding></app-business-expanding>

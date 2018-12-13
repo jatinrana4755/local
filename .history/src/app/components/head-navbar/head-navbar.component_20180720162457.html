@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-lg navbar-dark navtop">
+  <div class="container">
+    <ul class=" mr-auto parent ">
+      <li class=" dropdown pl-0">
+        <a class="nav-link disabled dropdown-toggle child" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <!-- <img src="assets/img/icon/eng.png" alt="">&nbsp; Eng -->
+        </a>
+        <div class="dropdown-menu" style="z-index: inherit;" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item text-dark" href="#">
+            <!-- <img src="assets/img/icon/china.png" alt="">&nbsp; Chinese</a> -->
+        </div>
+      </li>
+      <li>
+        <a class="nav-link disabled child margin-bottom" href="mailto:info@localcalls.in">
+          <img src="assets/img/icon/mail.png" alt="" style="opacity: 0.5;   ">&nbsp; info@localcalls.in</a>
+      </li>
+      <li>
+        <a class="nav-link disabled child margin-bottom " href="tel:18002006363">
+          <img src="assets/img/icon/phone.png" alt="" style="opacity: 0.7; ">&nbsp;1800 200 6363</a>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+<nav class="navbar header-nav container-fluid navbar-expand-lg navbar-dark color" id="navBar">
+  <div class="container">
+    <a class="navbar-brand shift-one logo-white" routerLink="/home" id="logoImg">
+      <img src="assets/img/logo.png" alt="">
+    </a>
+    <a class="navbar-brand shift-one logo-black" routerLink="/home" id="logoImg1" style="display: none">
+      <img src="assets/img/logo-black.png" alt="">
+    </a>
+    <button class="navbar-toggler shift" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation" style="border: none">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/home">HOME</a>
+        </li>
+        <li class="nav-item"  routerLinkActive="active">
+            <a class="nav-link"  routerLink="/aboutus" href="#">ABOUT US</a>
+          </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/category">CATEGORY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/allAds">ALL ADS</a>
+        </li>
+     
+        <li class="nav-item dropdown">
+          <a class="nav-link  dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          id="pagesDropdown" href="#">PAGES</a>
+          <div class="dropdown-menu" style="z-index: inherit;" aria-labelledby="pagesDropdown">
+              <a class="dropdown-item text-dark" routerLink="/term">T & C</a>
+              <li class="last">
+                  <a class="dropdown-item text-dark" routerLink="/contactus" >
+                     Contact Us
+                  </a>
+                </li>
+            </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item" *ngIf="!is_logged && !loggedIn" style="cursor: pointer;">
+          <a class="nav-link" routerLink="/login">
+            <i class="fas fa-user"></i>&nbsp; Register/Login
+          </a>
+        </li>
+        <li class="nav-item dropdown" *ngIf="is_logged" style="cursor: pointer;">
+          <a class="nav-link usernameA dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            id="logoutDropdown">
+            Hi, {{user}}
+          </a>
+          <div class="dropdown-menu" style="z-index: inherit;" aria-labelledby="logoutDropdown">
+            <a class="dropdown-item text-dark" (click)="logout()">Logout</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-round btn-outline-success btn-post-ads" href="https://cpanel.localcalls.in/website_vendor/create" style="padding: 8px 20px!important;
+          ">POST YOUR ADS</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</nav>

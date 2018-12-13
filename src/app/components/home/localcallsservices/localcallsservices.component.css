@@ -1,0 +1,26 @@
+.image-container{
+    background: white;
+    cursor: pointer;
+    max-height:150px;
+    max-width:150px;
+}
+.dummy{
+    text-align: center;
+}
+.content-grey{
+    background: #eee;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+}
+
+.circle-image{
+    border-radius: 100%;
+    border-style: solid;
+    min-width: 120px;
+    min-height: 120px;
+}
+
+
+

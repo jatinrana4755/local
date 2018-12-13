@@ -1,0 +1,144 @@
+.card-title{
+    font-weight: 600;
+}
+.save-btn{
+    padding: 0px 15px;
+    border-radius: 25px;
+}
+.save-btn img{
+    width:20px;
+}
+.save-btn:hover{
+    background: #fff;
+    box-shadow: 0 0 5px #eee;
+    color:#444;
+    border: 1px solid #ddd;
+}
+.card-img-top{
+    height: 200px;
+}
+.btn-round{
+    padding: 0px 15px;
+    border-radius: 25px;
+}
+.heading-container{
+    overflow: auto
+}
+.heading{
+    padding: 13px 20px;
+    float: left;
+    border-radius: 50%;
+    background: #da86da;
+    margin-right: 10px;
+    color: #fff;
+}
+.card-img-div{
+    position: relative;
+}
+.card-top{
+    background: rgba(0,0,0,0.1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.badge-notification{
+    top: 8px;
+    position: absolute;
+    left: 8px;
+}
+.badge-notification-bottom{
+    bottom: 8px;
+    position: absolute;
+    right: 8px;
+}
+.card-top-div{
+    height: 200px;
+    display: grid;
+    align-items: center;
+    background: #fff;
+    justify-items: center;
+}
+.card-hover{
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    box-shadow: 2px 2px 5px #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+.card-hover:hover{
+    transform: translate(0px, 2px);
+    box-shadow: none;
+}
+.card-label{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.8))
+}
+
+.star-icon{
+    font-size: 1.5em!important;
+}
+.ad-description{
+    font-size: 13px;
+    grid-column: 2;
+}
+
+.heading-container{
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    grid-template-rows: 1fr;
+}
+.ad-first{
+    grid-column: 1;
+}
+.ad-first span{
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    /* margin-top: 26px; */
+    text-transform: capitalize;
+    background: #17a2b8;
+
+}
+.ad-description{
+    grid-column: 2;
+}
+.card{
+    height: 325px;
+}
+.dummy-card .card{
+    height: auto;
+}
+.dummy-card .card-img-div{
+    height: 155px;
+}
+.dummy-card .card-img{
+    height: 100%;
+    background: #f6f6f6;
+}
+
+.dummy-card .border-round{
+    height: 15px;
+    background:  #f6f6f6;
+    width: 80%;
+    margin:0 auto;
+    border-radius: 25px;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    background-blend-mode: exclusion;
+    background-color: #fff;
+}
+.carousel{
+    margin: 0!important;
+}

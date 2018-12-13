@@ -1,0 +1,96 @@
+:root{
+    font-size: 16px;
+}
+
+.color{
+    background: linear-gradient(to right,#45b9f1,#7272d4);
+    height:50vh;
+
+}
+.para-color{
+    color:#fff;
+    font-weight: 600;
+    text-align: center;
+    margin-top:8vh;
+    font-size:1.6rem;
+}
+.on{
+    border-bottom: 1px solid #fff ;
+    padding-bottom: 1vh;
+
+}
+.paraOne-color{
+    color:#fff;
+    font-size:0.9rem;
+    text-align: center;
+    padding-top: 2vh;
+
+}
+.text-color{
+    color: #fff;
+}
+.parent{
+    display: flex;
+    justify-content: center;
+    margin-top:8vh;
+}
+.btn{
+    border:1.5px solid #fff;
+
+}
+.width{
+    font-size: 1rem;
+    padding-left: 0.6vw;
+}
+
+.happyback{
+    background: linear-gradient(to right, #D96A71,#445998);
+    padding: 80px 0;
+}
+
+.spec{
+    padding-top: 30px;
+}
+
+
+.bestpart{
+    min-height: 450px;
+    padding-top: 30px;
+}
+.social-icons{
+    max-height: 20px;
+    max-width: 30px;
+}
+
+.nopad{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.ico{
+    font-size: 20px;
+    vertical-align: text-top;
+    color: #888;
+}
+.app-div button{
+    color: #fff;
+    padding: 0 40px !important;
+    border-radius: 25px;
+    border: 1px solid #fff;
+}
+.app-div button:hover{
+    color: #555;
+    background: #fff;
+    border: 1px solid #fff;
+}
+.app-div button:hover img{
+    mix-blend-mode: difference;
+    opacity: 0.7;
+}
+.app-div button i{
+    font-size: 1.5rem;
+    vertical-align: middle;
+    color: #fff;
+}

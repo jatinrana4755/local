@@ -1,0 +1,29 @@
+.backgroundimg{
+    background: linear-gradient(to right,rgb(0, 102, 255), rgb(0, 255, 170));
+    color: white;
+}
+.content{
+    padding-top:150px;
+    padding-bottom:80px;
+}
+.contentcontact{
+    padding-top:220px;
+    padding-bottom:80px;
+}
+.vl {
+    border-left: 3px solid white;
+    height: 470px;
+    margin-top:150px;
+}
+.office-address{
+    padding-top:50px;
+    font-size:1.2em;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}

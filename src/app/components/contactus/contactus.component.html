@@ -1,0 +1,45 @@
+<div class="backgroundimg row">
+  <div class="col-md-5 contentcontact">
+    <h1 class="text text-center">Contact Us</h1>
+    <div class="col-md-8 col-md-offset-2">
+    <img class="img-responsive" src="assets/img/map-transparent.png">
+    </div>
+  </div>
+  <div class="vl col-md-1"></div>
+  <div class="col-md-3 col-md-offsset-1 content">
+      <form [formGroup]="contactForm" novalidate>
+          <div class="form-group">
+              <span *ngIf="firstname1.invalid && (firstname1.dirty || firstname1.touched) || (firstname1.invalid && contactFormBoolean)" style="color: red;">Please Enter Firstname </span>
+            <input type="text" class="form-control" id="firstname" formControlName="firstname" placeholder="First Name">
+          </div>
+          <div class="form-group">
+              <span *ngIf="lastname1.invalid && (lastname1.dirty || lastname1.touched) || (lastname1.invalid && contactFormBoolean)" style="color: red;">Please Enter Lastname</span>
+            <input type="text" class="form-control" id="lastname" formControlName="lastname" placeholder="Last Name">
+          </div>
+          <div class="form-group">
+              <span *ngIf="email1.invalid && !(email1.errors && email1.errors.pattern) && (email1.dirty || email1.touched) || ( email1.invalid && contactFormBoolean)" style="color: red;">Please Enter Email </span>
+              <span *ngIf="email1.errors && (email1.errors.pattern)" style="color: red;">Please Enter Valid Email</span>
+            <input type="text" class="form-control" id="email" formControlName="email" placeholder="Email Address">
+          </div>
+          <div class="form-group">
+              <span *ngIf="contactNumber1.invalid && !(contactNumber1.errors && contactNumber1.errors.pattern) && (contactNumber1.dirty || contactNumber1.touched) || (contactNumber1.invalid && contactFormBoolean)" style="color: red;">Please Enter Contact Number</span>
+              <span *ngIf="contactNumber1.errors && contactNumber1.errors.pattern" style="color: red;">Please Enter Valid Contact Number</span>
+            <input type="number" class="form-control" id="contactno" ng-pattern="integerval"  formControlName="contactNumber" placeholder="Contact Number">
+          </div>
+          <div class="form-group">
+              <span *ngIf="query1.invalid && (query1.dirty || query1.touched) || (query1.invalid && contactFormBoolean)" style="color: red;">Please Enter Query </span>
+            <input type="textarea" row=3 class="form-control" formControlName="query" id="query" placeholder="Query">
+          </div>
+          <div class="form-group">
+              <button type="button" (click)="SubmitContactForm()" class="btn btn-outline" style="width: 100%;"><h3>Submit</h3></button>
+          </div>
+      </form>
+      <div class="office-address">
+      <h3 class="text text-center">Office Location</h3>
+      <p><i class="fa fa-map-marker"></i>&nbsp;&nbsp; <span style="font-weight: bold;">Corporate Office : </span> Level-02, Wing B, Art Guild House, Phoenix Market City, L.B.S Marg, Kurla (W), BKC Annexe, Mumbai-400070, Maharashtra, India</p>
+      <p><i class="fa fa-map-marker"></i>&nbsp;&nbsp; <span style="font-weight: bold;">Registered Office : </span> Aakob Technologies Private Limited : Flat No. 11, OM Plaza, Sec-19, Indra Nagar, Lucknow-226016, Phone : 0522-4238532</p>
+      <p><i class="fa fa-envelope"></i>&nbsp;&nbsp; info@localcalls.in, sales@localcalls.in, rohit.karidhl@localcalls.in</p>
+      <p><i class="fa fa-mobile"></i>&nbsp;&nbsp; 18002006363, +91 8888028888</p>
+    </div>
+  </div>
+</div>

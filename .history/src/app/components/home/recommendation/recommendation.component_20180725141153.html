@@ -1,0 +1,361 @@
+<div class="container-fluid pt-5" style="background: #f9f9f9;">
+  <div class="row">
+
+    <div class="col text-center">
+      <h4 class="mb-1 text-center"> Recommended services</h4>
+      <span>Hand-picked services around you..</span>
+      <!-- crausel starts-->
+
+      <div class="row mt-4">
+        <div *ngIf="featuredRes" class="col-md-8 mx-auto">
+          <div class="featuredCarousel">
+            <div class="responsive" *ngFor="let featureAdd of featuredRes;" style="padding-left: 15px!important;padding-right: 15px!important;margin-bottom: 30px;">
+              <div class="card card-hover" (click)="getDetails(featureAdd)">
+                <div class="card-img-div">
+                  <div class="card-top">
+                    <div class="card-label text-white text-left">
+                      <h6 class="mb-0" style="font-weight: bold;font-size: 13px;">{{featureAdd.shop_name}}</h6>
+                      <span>{{featureAdd.office_address}}</span>
+                    </div>
+                  </div>
+                  <img *ngIf="featureAdd.path!=null" class="card-img-top mb-0" src="https://cpanel.localcalls.in/public/admin/uploads/{{featureAdd.path}}"
+                    alt="Card image cap">
+                  <img *ngIf="featureAdd.path==null" class="card-img-top mb-0" src="assets/img/car-loan.jpg" alt="Card image cap">
+                </div>
+                <div class="card-body text-left ">
+                  <div class="mb-3 " style="overflow: auto">
+                    <div class="col-md-2 p-0">
+                      <i class="far fa-heart"></i>&nbsp;&nbsp; {{featureAdd.rating}}</div>
+                    <div class="col-md-10 pr-0 text-success text-right">{{featureAdd.category}}</div>
+                    <span class="card-title"></span>
+
+                  </div>
+                  <hr>
+                  <div class="heading-container">
+                    <div class="ad-first">
+                      <span>{{featureAdd.description.substring(0, 1)}}</span>
+                    </div>
+                    <div class="ad-description">
+                      <span class="">{{featureAdd.description.substring(0,40)}} ...</span>
+                    </div>
+                  </div>
+                  <!-- <div class="text-warning mb-3">
+                  <rating [(ngModel)]="featureAdd.rating"></rating>
+                </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--carousel ends-->
+      <!-- <div class="row mt-4">
+        <div *ngIf="!featuredRes" class="col-md-8 mx-auto">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 dummy-card">
+            <div class="card">
+              <div class="card-img-div">
+                <div class="card-top">
+                  <div class="card-img">
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="border-round mb-3"></div>
+                <div class="border-round "></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 dummy-card">
+            <div class="card">
+              <div class="card-img-div">
+                <div class="card-top">
+                  <div class="card-img">
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="border-round mb-3"></div>
+                <div class="border-round "></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 dummy-card">
+            <div class="card">
+              <div class="card-img-div">
+                <div class="card-top">
+                  <div class="card-img">
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="border-round mb-3"></div>
+                <div class="border-round "></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!--
+      <div class="row mt-4">
+
+        <div *ngIf="featuredRes" class="col-md-8 mx-auto">
+
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" *ngFor="let featureAdd of featuredRes; let i=index" style="    padding-left: 15px!important;
+          padding-right: 15px!important;
+          margin-bottom: 30px;">
+            <div class="card card-hover" (click)="getDetails(featureAdd)">
+              <div class="card-img-div">
+                <div class="card-top">
+                  <div class="card-label text-white text-left">
+                    <h6 class="mb-0" style="font-weight: bold;font-size: 13px;">{{featureAdd.shop_name}}</h6>
+                    <span>{{featureAdd.office_address}}</span>
+                  </div>
+                </div>
+                <img *ngIf="featureAdd.path!=null" class="card-img-top mb-0" src="https://cpanel.localcalls.in/public/admin/uploads/{{featureAdd.path}}"
+                  alt="Card image cap">
+                <img *ngIf="featureAdd.path==null" class="card-img-top mb-0" src="assets/img/car-loan.jpg" alt="Card image cap">
+              </div>
+              <div class="card-body text-left ">
+                <div class="mb-3 " style="overflow: auto">
+                  <div class="col-md-2 p-0">
+                    <i class="far fa-heart"></i>&nbsp;&nbsp; {{featureAdd.rating}}</div>
+                  <div class="col-md-10 pr-0 text-success text-right">{{featureAdd.category}}</div>
+                  <span class="card-title"></span>
+
+                </div>
+                <hr>
+                <div class="heading-container">
+                  <div class="ad-first">
+                    <span>{{featureAdd.description.substring(0, 1)}}</span>
+                  </div>
+                  <div class="ad-description">
+                    <span class="">{{featureAdd.description.substring(0,40)}} ...</span>
+                  </div>
+                </div>-->
+      <!-- <div class="text-warning mb-3">
+                  <rating [(ngModel)]="featureAdd.rating"></rating>
+                </div> -->
+      <!--
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div> -->
+      <div class="row">
+        <div class="col-md-10 py-5 mx-auto">
+          <button class="btn btn-success btn-round" type="button" routerLink="/allAds">View All</button>
+        </div>
+      </div>
+
+
+    </div>
+    <!--end of col-->
+  </div>
+  <!--end row-->
+</div>
+<!--end of container-->
+
+
+
+<div class="container-fluid pt-5">
+  <div class="row">
+    <div class="col text-center">
+      <h4 class="mb-1 text-center"> Trending Services</h4>
+      <span>Most searched services around you.</span>
+
+      <!-- crausel starts-->
+      <div class="row mt-4">
+        <div *ngIf="!featuredRes" class="col-md-8 mx-auto">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 dummy-card">
+            <div class="card">
+              <div class="card-img-div">
+                <div class="card-top">
+                  <div class="card-img">
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="border-round mb-3"></div>
+                <div class="border-round "></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 dummy-card">
+            <div class="card">
+              <div class="card-img-div">
+                <div class="card-top">
+                  <div class="card-img">
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="border-round mb-3"></div>
+                <div class="border-round "></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 dummy-card">
+            <div class="card">
+              <div class="card-img-div">
+                <div class="card-top">
+                  <div class="card-img">
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="border-round mb-3"></div>
+                <div class="border-round "></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div *ngIf="trendingRes" class="col-md-8 mx-auto">
+          <div class="trendingCarousel">
+              <div class="" *ngFor="let add of trendingRes;" style="padding-left:15px!important;padding-right: 15px!important;margin-bottom: 30px;">
+                  <div class="card card-hover" (click)="getDetails(add)" style="margin-right: 0px;margin-bottom: 0px">
+                    <div class="card-img-div">
+                      <div class="card-top">
+                        <div class="card-label text-white text-left">
+                          <h6 class="mb-0" style="font-weight: bold;font-size: 13px;">{{add.shop_name}}</h6>
+                          <span>{{add.office_address}}</span>
+                        </div>
+                      </div>
+                      <img *ngIf="add.path!=null" class="card-img-top mb-0" src="https://cpanel.localcalls.in/public/admin/uploads/{{add.path}}"
+                        alt="Card image cap">
+                      <img *ngIf="add.path==null" class="card-img-top mb-0" src="assets/img/car-loan.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-left ">
+                      <div class="mb-3 " style="overflow: auto">
+      
+                        <div class="col-md-2 p-0">
+                          <i class="far fa-heart"></i>&nbsp;&nbsp; {{add.rating}}</div>
+                        <div class="col-md-10 pr-0 text-success text-right">{{add.category}}</div>
+                        <span class="card-title"></span>
+                      </div>
+                      <hr>
+                      <div class="heading-container">
+                        <div class="ad-first">
+                          <span>{{add.description.substring(0, 1)}}</span>
+                        </div>
+                        <div class="ad-description">
+                          <span class="">{{add.description.substring(0,40)}} ...</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+              </div>
+          </div>
+        </div>
+      </div>
+      <!--carousel ends-->
+
+      <!--
+      <div class="row mt-4">
+          <div *ngIf="!featuredRes" class="col-md-8 mx-auto">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 dummy-card">
+              <div class="card">
+                <div class="card-img-div">
+                  <div class="card-top">
+                    <div class="card-img">
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="border-round mb-3"></div>
+                  <div class="border-round "></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 dummy-card">
+              <div class="card">
+                <div class="card-img-div">
+                  <div class="card-top">
+                    <div class="card-img">
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="border-round mb-3"></div>
+                  <div class="border-round "></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 dummy-card">
+              <div class="card">
+                <div class="card-img-div">
+                  <div class="card-top">
+                    <div class="card-img">
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="border-round mb-3"></div>
+                  <div class="border-round "></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="row mt-4">
+        <div *ngIf="trendingRes" class="col-md-8 mx-auto">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" *ngFor="let add of trendingRes; let i=index" style="    padding-left: 15px!important;
+          padding-right: 15px!important;
+          margin-bottom: 30px;">
+            <div class="card card-hover" (click)="getDetails(add)">
+              <div class="card-img-div">
+                <div class="card-top">
+                  <div class="card-label text-white text-left">
+                    <h6 class="mb-0" style="font-weight: bold;font-size: 13px;">{{add.shop_name}}</h6>
+                    <span>{{add.office_address}}</span>
+                  </div>
+                </div>
+                <img *ngIf="add.path!=null" class="card-img-top mb-0" src="https://cpanel.localcalls.in/public/admin/uploads/{{add.path}}"
+                  alt="Card image cap">
+                <img *ngIf="add.path==null" class="card-img-top mb-0" src="assets/img/car-loan.jpg" alt="Card image cap">
+              </div>
+              <div class="card-body text-left ">
+                <div class="mb-3 " style="overflow: auto">
+
+                  <div class="col-md-2 p-0">
+                    <i class="far fa-heart"></i>&nbsp;&nbsp; {{add.rating}}</div>
+                  <div class="col-md-10 pr-0 text-success text-right">{{add.category}}</div>
+                  <span class="card-title"></span>
+
+                </div>
+                <hr>
+                <div class="heading-container">
+                  <div class="ad-first">
+                    <span>{{add.description.substring(0, 1)}}</span>
+                  </div>
+                  <div class="ad-description">
+                    <span class="">{{add.description.substring(0,40)}} ...</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      -->
+
+      <div class="row">
+        <div class="col-md-10 py-5 mx-auto">
+          <button class="btn btn-success btn-round" type="button" routerLink="/allAds">View All</button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <!--end row-->
+</div>
+<!--end of container-->

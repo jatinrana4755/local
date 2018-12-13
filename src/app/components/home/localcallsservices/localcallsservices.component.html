@@ -1,0 +1,13 @@
+<div class="container py-5">
+  <div class="col-md-12 mx-auto text-center">
+    <h4 class="m-0 text-center"> Categories</h4>
+    <span>Choose from a wide range of services.</span>
+    <div class="row" style="    margin: 80px 10 10px; padding-top: 40px;">
+        <div class="categoryCarousel col-md-10 mx-auto" style="height: 300px;">
+            <div class="image-container" *ngFor="let cat of categoriesResponse | sortByCategoryName;">
+                <img src="https://cpanel.localcalls.in/public/icon/{{cat.image}}" alt="{{cat.category}}" (click)="openSubcategory(cat)" style="outline:none" class="circle-image">
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

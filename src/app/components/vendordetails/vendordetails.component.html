@@ -1,0 +1,302 @@
+<div class="container-fluid">
+    
+  <div class="header-space"></div>
+  <div class="row">
+    <div style="background-color: #F26C69" class="container-fluid box mb-5">
+      <div style="max-width:900px;" class="container pt-4">
+        <div class="row">
+          <span style="color:white">
+            <strong>Home > </strong>
+          </span>
+          <span style="color:white">&nbsp;
+            <strong>Detail > </strong>
+          </span>
+          <span style="color:white">&nbsp;
+            <strong>{{vendordata?.parent_category}} ></strong>
+          </span>
+          <span style="color:white">&nbsp;
+            <strong>{{vendordata?.category}}</strong>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10 mx-auto">
+      <div class="container" id="main">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="container">
+              <div class="slider-for">
+                <div *ngIf="imagedata?.length==0">
+                    <img src="assets/img/bg-2.jpg"  height="400px"/>
+                </div>
+                <div *ngFor="let img of imagedata">
+                  <img src="https://cpanel.localcalls.in/public/admin/uploads/{{img.image_name}}" />
+                </div>
+              </div>
+              <div class="your-class">
+                <div *ngFor="let img of imagedata">
+                  <img src="https://cpanel.localcalls.in/public/admin/uploads/{{img.image_name}}" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" id="content">
+            <h4 class="m-0 pb-2">
+              <strong>{{vendordata?.shop_name}}</strong>
+            </h4>
+            <p class="pt-3">
+              <i style="color: green;" class="fas fa-clock pr-1"></i>{{vendordata?.created_on * 1000 | date}}
+              <i style="color:green" class="fas fa-tags pl-2"></i>
+              <span class="pl-1" *ngIf="vendordata?.counter>=100 && vendordata?.counter<=150">New</span>
+              <i style="color:green" class="far fa-eye pl-2"></i>
+              <span class="pl-2">{{vendordata?.counter}} Views</span>
+            </p>
+            <hr>
+            <div class="col-md-12 pl-0">
+              <ul class="colorgrey">
+                <li *ngIf="vendordata?.name">
+                  <span class="vendorDesc-title">Owner :</span>
+                  <span class="vendorDesc-content">{{vendordata?.name}}</span>
+                </li>
+                <li *ngIf="vendordata?.email">
+                  <span class="vendorDesc-title">Email :</span>
+                  <span class="vendorDesc-content">{{vendordata?.email}}</span>
+                </li>
+                <li *ngIf="vendordata?.city">
+                  <span class="vendorDesc-title">Location :</span>
+                  <span class="vendorDesc-content">{{vendordata?.city}}</span>
+                </li>
+                <li *ngIf="vendordata?.website_url">
+                  <span class="vendorDesc-title">Website :</span>
+                  <span class="vendorDesc-content">
+                    <a style="color:black" href="#">
+                      <strong>{{vendordata?.website_url}}</strong>
+                    </a>
+                  </span>
+                </li>
+                <li *ngIf="vendordata?.hours">
+                  <span class="vendorDesc-title">Hours :</span>
+                  <span class="vendorDesc-content">{{vendordata?.hours}}</span>
+                </li>
+                <li *ngIf="vendordata?.office_address">
+                  <span class="vendorDesc-title">Address :</span>
+                  <span class="vendorDesc-content">{{vendordata?.office_address}}</span>
+                  <button (click)="showMap()" class="btn mapbtn btn-success btn-sm ml-4" data-toggle="modal" data-target="#viewMapModal" style="min-width: auto;padding: 0 13px;">
+                      <i style="color:#fff;font-size: 14px" class="fas fa-map-marked-alt "></i>&nbsp;&nbsp;View On Map
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-12 btncol pt-4 pl-0">
+              <button class="btn btn-success" data-toggle="modal" data-target="#numbermodal">
+                <i style="color:#fff;font-size: 14px; transform:rotateY(180deg);" class="fas fa-phone pr-1"></i>&nbsp;&nbsp;View Number
+              </button>
+              <button class="btn btn-success" (click)="checkLogin()">
+                <i class="fas fa-comment" style="color:#fff;font-size: 14px">&nbsp;&nbsp;</i> Write review
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-5">
+          <div class="col-md-9">
+            <h4>
+              Description
+            </h4>
+            <div class="col-12 desc">
+              <p style="text-align: justify;" class="colorgrey">{{vendordata?.des}}</p>
+            </div>
+          </div>
+          <div class="col-md-3 pt-5">
+            <h2 class="text-center">ADS here</h2>
+          </div>
+        </div>
+
+        <section class="container-fluid py-3">
+          <div class="seaction-heading my-5">
+            <h4 class="">Reviews And Ratings</h4>
+          </div>
+          <div class="section-body">
+            <div class="row">
+              <div class="col-md-9 ">
+                <div *ngIf="!rating"><span>No review availabe</span></div>
+                <ul class="list-group">
+                  
+                  <li class="list-group-item" *ngFor="let rate of rating">
+                    <div class="container-review">
+                      <div class="review-items">
+                        <img src="assets/img/icon/user.svg" style="width: 60px;">
+                      </div>
+                      <div class="review-items">
+                        <div>
+                            <h6 class="mb-2" style="font-weight: 600;text-transform: capitalize">{{rate.name}}</h6>
+                            <div class="">
+                              <rating [(ngModel)]="rate.rating" [readonly]="true"></rating>
+                            </div>
+                        </div>
+                        
+                        <p style="text-transform: capitalize">{{rate.review}}</p>
+                      </div>
+                      <div class="review-items" style="text-align: right">
+                          <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fwww.localcalls.in%2F%23%2Fhome&layout=button_count&size=large&mobile_iframe=true&appId=208589973195201&width=84&height=28" width="84" height="28" style="border:none;overflow:hidden;
+                          display: inline-block;
+                          margin: 0 auto;
+                          width: 100px;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                      </div> 
+                      
+                    </div>
+                  </li>
+                </ul>
+                <div class="mt-3" *ngIf="reviewAll?.length > 4">
+                  <a href="javascript:void(0)" (click)="showAllComment()" #viewComments>View all reviews</a>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <div class="col-md-12 pt-5 pb-5 ">
+          <h4 class="text-center pb-5">
+            Related Ads
+          </h4>
+          
+          <div class="row">
+            <div class="col-md-3 col-sm-6 col-12 smallcard" *ngFor="let ads of relatedads">
+              <div class="card" (click)="getDetails(ads)">
+                <div class="card-img-div">
+                  <div class="card-top">
+                    <span class="badge badge-warning text-white badge-round badge-notification">New</span>
+                  </div>
+                  <img *ngIf="ads.path!=null" style="height:170px;" class="card-img-top mb-0" src="https://cpanel.localcalls.in/public/admin/uploads/{{ads.path}}"
+                    alt="Card image cap">
+                  <img *ngIf="ads.path==null" style="height:170px;" class="card-img-top mb-0" src="assets/img/dummy.jpg" alt="Card image cap">
+                </div>
+                <div class="card-body text-left">
+                  <div class="mb-3" style="height: 17px;">
+                    <span class="card-title">
+                      <strong>{{ads.shop_name.substring(0,20)}}</strong>
+                    </span>
+                    <span class="float-right text-success">
+                      <i class="far fa-bookmark"></i>
+                    </span>
+                  </div>
+                  <div style="height: 15px;">
+                    <span class="colorgrey">{{ads.vendor_name}}</span>
+                  </div>
+                  <div class="text-warning mb-3" style="height: 25px !important;">
+                    <rating [(ngModel)]="ads.rating" [readonly]="true"></rating>
+                  </div>
+                  <div style="min-height: 25px;">
+                      <span class="text-success">
+                        <i class="fas fa-map-marker-alt"></i>
+                      </span>&nbsp;
+                      <span style="text-transform: uppercase">{{ads.office_address.substring(0,40)}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div style="margin-top:150px;" class="modal" id="numbermodal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-center mx-auto">
+          <strong>Phone</strong>
+        </h2>
+        <button class="close" type="button" data-dismiss="modal">
+          <i class="fas fa-times-circle"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="text-center">{{vendordata?.phone}}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+<button style="display: none" data-toggle="modal" data-target="#reviewmodal" #reviewModalButton></button>
+<div class="modal" id="reviewmodal">
+  <div class="modal-dialog" style="margin-top:13vh;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-center mx-auto" style="font-size: 20px;margin-top: 10px;">
+          <strong>POST YOUR REVIEWS</strong>
+        </h2>
+        <button class="close" type="button" data-dismiss="modal">
+          <i class="fas fa-times-circle" style="font-size: 14px"></i>
+        </button>
+      </div>
+      <div class="modal-body parent">
+        <div class="my-4 bg-dark" style="border-radius: 25px;">
+          <rating [(ngModel)]="stars"></rating>
+        </div>
+
+        <br>
+        <textarea class="form-control" [(ngModel)]="review" name="review" placeholder="Add Review" rows="7"></textarea>
+        <br>
+        <div class="parent ">
+          <button class="btn btn-round has-gradient text-white margin-left" (click)="postVendorReview()">Submit
+            <span class="spinner" *ngIf="process">
+              <i class="fas fa-spinner"></i>
+            </span>
+          </button>
+        </div>
+        <button style="display: none" #closeReviewModal data-dismiss="modal"></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin-top:120px; margin-left: 20px;" class="col-md-4 col-sm-4 col-xs-12 col-lg-8" class="modal" id="viewMapModal">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="text-center">
+            <strong>Location On Map</strong>
+          </h2>
+          <button class="close" type="button" data-dismiss="modal">
+            <i class="fas fa-times-circle"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <agm-map [latitude]="Latitude" [longitude]="Longitude" [zoom]="zoom"> 
+              <agm-marker [latitude]="Latitude"
+                 [longitude]="Longitude" [label]="label">
+                </agm-marker>
+          </agm-map>
+        </div>
+      </div>
+    
+</div>
+<button style="display: none" class="btn btn-success" data-toggle="modal" data-target="#confirmModal" #confirmBtn></button>
+<div style="margin-top:150px;" class="modal" id="confirmModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body py-4 text-center">
+        <div *ngIf="messageLoginError">
+          <span class="text-warning"><i class="fas fa-exclamation-circle"></i>&nbsp;&nbsp;</span> {{messageLoginError}}
+        </div>
+        <div *ngIf="resReview">
+          <span class="text-success"><i class="fas fa-check-circle"></i>&nbsp;&nbsp;</span> {{resReview}}
+        </div>
+        <div *ngIf="errorReview">
+          <span class="text-danger"><i class="fas fa-times-circle"></i>&nbsp;&nbsp;</span> {{errorReview}}
+        </div>
+        <button class="btn btn-round has-gradient mt-4 text-white" data-dismiss="modal" *ngIf="resReview || errorReview">OKAY</button>
+        <button class="btn btn-round has-gradient mt-4 text-white" data-dismiss="modal" *ngIf="messageLoginError" routerLink="/login">LOGIN</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

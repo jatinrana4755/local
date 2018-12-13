@@ -1,0 +1,22 @@
+.spinner{
+    color: #fff;
+    position: absolute;
+    right: 8px;
+    top: 4px;
+    font-size: 17px;
+    animation-name: rotate;
+    animation-duration: 1.6s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+.spinner i{
+    color: #fff;
+}
+@keyframes progress {
+    from {width:0px}
+    to {width:100%}
+}
+@keyframes rotate {
+    from {transform: rotateZ(0deg)}
+    to {transform: rotateZ(360deg)}
+}

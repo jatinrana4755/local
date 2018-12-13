@@ -1,0 +1,253 @@
+/*
+.main-back{
+            min-height: 800px;margin:auto;float: none;background-color: #e4e9ec
+        }
+        */
+
+/*
+        .category{
+            min-height: 100px;
+          
+            padding-top: 40px;
+            margin:auto;
+            float: none;
+            padding-left: 40px;
+            padding-right: auto;
+            margin-bottom: 0px;
+         
+        }
+        
+        .circle{
+            width: 60px;
+            min-height: 60px;
+        
+            border-radius: 100%;
+        
+            display: grid;
+            background-color: #fff;
+            z-index: 4;
+            position: absolute;
+    top: 34px;
+    left: 70px;
+        }
+        .list{
+            width:425px;
+            min-height: 50px;
+        
+            border-radius: 30px;
+            background-color: #494c4e;
+            margin: auto;
+            padding:10px;
+
+
+        }
+        h5{
+            color: #fdfdfd;
+        }
+        .height-70{
+            padding:8em 0; 
+            height:auto;
+
+        }
+    
+        */
+
+.second {
+  height: 50vh;
+}
+
+.size {
+  background-position: center;
+  align-items: center;
+  justify-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: saturation;
+  box-shadow: inset 0 0 0 2000px rgba(6, 7, 7, 0.349);
+}
+
+.correct {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  mix-blend-mode: overlay;
+}
+
+.card-body {
+  z-index: 1;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.card-title {
+  width: 106px;
+}
+
+.margin-top {
+  margin-top: 7vh;
+}
+
+.margin-left {
+  margin-left: 4vw;
+}
+
+.width {
+  width: 28vw;
+  height: 2vh;
+}
+
+height {
+  width: 10vw;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+}
+
+.color {
+  background: linear-gradient(to right, #30b684, #2cb9b0);
+  height: 50vh;
+}
+
+.para-color {
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 8vh;
+  font-size: 1.6rem;
+}
+
+.on {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 1vh;
+}
+
+.paraOne-color {
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+  padding-top: 2vh;
+}
+
+.text-color {
+  color: #fff;
+}
+
+
+.app-div button {
+  color: #fff;
+  padding: 0 40px !important;
+  border-radius: 25px;
+  border: 1px solid #fff;
+}
+
+.app-div button:hover {
+  color: #555;
+  background: #fff;
+  border: 1px solid #fff;
+}
+
+.app-div button:hover img {
+  mix-blend-mode: difference;
+  opacity: 0.7;
+}
+
+.app-div button i {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  color: #fff;
+}
+
+.font-color {
+  color: white;
+  font-weight: 600
+}
+
+a:hover {
+  color: white;
+}
+
+.zoom {
+  transition: transform .4s;
+  /* Animation */
+  height: 200px;
+  cursor: pointer;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.2)
+}
+
+.zoom:hover {
+  transform: scale(1.04);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.load {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid orange;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
+  background: rgba(0, 0, 0, 0.3)
+}
+
+/* Safari */
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.pos {
+  margin-left: 37vw;
+  margin-top: 5vh;
+}
+.notAvail{
+    width: 100%;
+    height: 50vh;
+    font-size: 18px;
+    font-weight: 600;
+    display: grid;
+    color: #777;
+    align-items: center;
+}
+
+@media screen and (max-width:480px) {
+  .mar {
+    height: 55vh;
+  }
+  .app-div button {
+    color: #fff;
+    padding: 0 40px !important;
+    border-radius: 25px;
+    border: 1px solid #fff;
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+}

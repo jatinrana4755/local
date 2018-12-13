@@ -1,0 +1,65 @@
+<div class="container-fluid has-gradient">
+  <div class="row" style="padding: 200px 0">
+    <div class="col-md-4 mx-auto">
+      <div class="card card-body">
+        <h4 class="text-center mb-4">RESET PASSWORD</h4>
+        <form>
+            <div class="form-group">
+                <input type="password" style="border-radius:25px;" class="form-control" name="password" placeholder="New Password" required minlength="8" [(ngModel)]="data.password" #password="ngModel">
+                <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                    class="alert alert-danger" style="border-radius: 25px;">
+
+                  <div *ngIf="password.errors.required">
+                    Name is required.
+                  </div>
+                  <div *ngIf="password.errors.minlength">
+                    Name must be at least 8 characters long.
+                  </div>
+
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="password" style="border-radius:25px;" class="form-control" name="confirmPassword" placeholder="Confirm Password" required minlength="8" [(ngModel)]="data.confirm_password" #confirmPassword="ngModel">
+                <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)"
+                    class="alert alert-danger" style="border-radius: 25px;">
+
+                  <div *ngIf="confirmPassword.errors.required">
+                    Name is required.
+                  </div>
+                  <div *ngIf="confirmPassword.errors.minlength">
+                    Name must be at least 8 characters long.
+                  </div>
+
+                </div>
+              </div>
+              <button type="submit" class="btn btn-round has-gradient text-white" (click)="onSubmit()"><i class="fas fa-check" style="color: #fff;"></i>&nbsp;&nbsp; SUBMIT
+                <span class="spinner" *ngIf="process">
+                  <i class="fas fa-spinner"></i>
+                </span>
+              </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#alertModal"  #alertModalBtn style="display: none"></button>
+
+<!-- Modal -->
+<div id="alertModal" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="margin-top: 200px;">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <div *ngIf="message">
+            <p class="mb-4" ><span class="text-success"><i class="fas fa-check-circle"></i>&nbsp;&nbsp;</span> {{message}}</p>
+            <button class="btn btn-round has-gradient text-white" routerLink="/login" data-dismiss="modal">LOGIN</button>
+        </div>
+        <div *ngIf="err">
+            <p class="mb-4" ><span class="text-danger"><i class="fas fa-times-circle"></i>&nbsp;&nbsp;</span>{{err}}</p>
+            <button class="btn btn-round has-gradient text-white" data-dismiss="modal">TRY AGAIN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
